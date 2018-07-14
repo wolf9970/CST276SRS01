@@ -1,69 +1,32 @@
+//
+// Created by wolf on 7/9/18.
+//
+
+#ifndef OBSERVER_SUBJECT_H
+#define OBSERVER_SUBJECT_H
+
+
 #include "Observer.h"
 #include <vector>
+#include <functional>
+#include <algorithm>
 
-class Subject
-{
- public:
 
-  virtual ~Subject() =0;
-  virtual void Attach(Observer* o);
-  virtual void Detach(Observer* o);
-  virtual void Notify();
+class Subject {
 
- private:
+public:
 
-  //vector
+    virtual void Attach(Observer* observer);
+    virtual void Detach(Observer* observer);
+    virtual void Notify();
 
+protected:
+
+    virtual ~Subject();
+
+private:
+    std::vector<Observer> observers_;
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Subject
-{
- public:
-  virtual ~Subject();
-  virtual void Attach(Observer*);
-  virtual void Detach(Observer*);
-  virtual void Notify();
-  
- protected:
-  Subject();
-
- private:
-  List<Observer*> *_observes;
-};
+#endif //OBSERVER_SUBJECT_H

@@ -1,13 +1,28 @@
+//
+// Created by wolf on 7/9/18.
+//
+
+#ifndef OBSERVER_CONCRETESUBJECT_H
+#define OBSERVER_CONCRETESUBJECT_H
+
 #include "Subject.h"
 
-class ConcreteSubject : public Subject
-{
+class ConcreteSubject : public Subject {
 
- private:
-  auto subjectState{ true };
+private:
 
- public:
-  bool GetState() const; 
-  void SetState(auto const state_);
+    bool subjectState_ = false;
+
+public:
+
+    ConcreteSubject();
+    ~ConcreteSubject();
+
+    bool GetState() const;
+    void SetState(bool const state);
+
 
 };
+
+
+#endif //OBSERVER_CONCRETESUBJECT_H
